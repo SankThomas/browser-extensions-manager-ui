@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,18 +14,24 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Next15 Starter Template",
-  description:
-    "Next15 Starter Template with JavaScript, ShadCN, TailwindCSS and Prettier Plugin TailwindCSS",
+  title: "FM Challenge | Browser Extensions Manager UI",
+  description: "FM Challenge | Browser Extensions Manager UI",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
