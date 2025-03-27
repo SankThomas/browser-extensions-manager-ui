@@ -67,6 +67,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-neutral-900 text-neutral-100;
+    @apply bg-neutral-50 text-neutral-800 dark:bg-[#12121c] dark:text-neutral-100;
   }
 }
